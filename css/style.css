@@ -1,6 +1,22 @@
-main {
-  font-family: 'Open Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
 }
+
+body {
+  text-align: center;
+  min-width: 600px;
+}
+
+/* #pagebox {
+  text-align: left;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+} */
 
 header {
   width: 100%;
@@ -9,8 +25,8 @@ header {
 }
 
 #home {
-  background: no-repeat white url(/assets/images/hero-img.png);
-  background-size: 100% 800px;
+  background: no-repeat black url(/assets/images/unwind-hero.png);
+  background-size: 100% 1000px;
   /* background-size: 100% auto; */
 }
 
@@ -20,6 +36,7 @@ header {
   font-size: 35px;
   text-align: center;
   color: white;
+  padding: 50px;
 }
 
 /* -------------------------------- Navbar -------------------------------- */
@@ -28,22 +45,33 @@ nav {
 }
 
 #nav-bar {
-  background-color: rgba(26, 46, 56, 0.9);
+  /* background-color: rgba(26, 46, 56, 0.9); */
   /* padding-bottom: 0;
   padding-top: 20px;  */
   font-size: 14px;
+
+  text-align: left;
+  /* width: 1400px; */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #navbarContent {
   justify-content: right;
 }
 
-#navbarContent .navbar-nav .nav-item .nav-link {
+#navbarContent a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* #navbarContent .navbar-nav .nav-item .nav-link {
   color: white;
   font-weight: 500;
   padding: 10px;
   float: right;
-}
+} */
 
 /*Toggle this when nav is active*/
 .dropdown {
@@ -66,10 +94,14 @@ nav {
 }
 
 #navbarContent #login-btn {
-  color: #03b1f4;
+  color: #fff;
   font-weight: 700;
   margin-bottom: 8px;
   font-size: 12px;
+}
+
+#navbarContent #login-btn:hover {
+  color: #1c588c;
 }
 
 #navbarContent #login-btn #user-icon {
@@ -78,25 +110,79 @@ nav {
 
 /* Change the color in the stroke property of the hamburger menu */
 .custom-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255,165,0)' stroke-width='2' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255,255,255)' stroke-width='3' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   cursor: pointer;
+}
+
+#hero-cta-btn {
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #1c588c;
+  color: #fff;
+}
+
+#hero-cta-btn:hover {
+  background-color: white;
+  color: #1c588c;
 }
 
 /* -------------------------------- Main -------------------------------- */
 main {
-  height: 200vh;
+  background-color: #000;
 }
+
+#main-container {
+  text-align: left;
+  /* width: 1200px; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#sound-titles {
+  font-size: 50px;
+}
+
+#sound-titles,
+.row {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.row .col img {
+  width: 350px;
+  height: 250px;
+  filter: drop-shadow(0px 3px 7px white);
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.row .col:hover {
+  filter: drop-shadow(0px 3px 7px #1c588c);
+}
+
+.row .col p {
+  cursor: pointer;
+}
+
+/* .row .col p:hover {
+  text-decoration: underline;
+} */
 
 /* -------------------------------- Footer -------------------------------- */
 footer {
   /* position: fixed; */
-  left: 0px;
+  /* left: 0px; */
   bottom: 0px;
   width: 100%;
-  background: aliceblue;
+  background: #000;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   height: 80px;
+  border-top: 1px solid #fff;
+  margin-top: 50px;
 }
