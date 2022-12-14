@@ -25,7 +25,7 @@ header {
 }
 
 #home {
-  background: no-repeat black url(/assets/images/unwind-hero.png);
+  background: no-repeat black url(/public/images/unwind-hero.png);
   background-size: 100% 1000px;
   /* background-size: 100% auto; */
 }
