@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,700&family=Henny+Penny&family=Open+Sans&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap"
       rel="stylesheet"
     />
 
@@ -36,12 +36,7 @@
     <div id="container">
       <nav class="navbar navbar-expand-xl navbar-dark sticky-top" id="nav-bar">
         <a class="navbar-brand pl-4 pt-0" href="index.html">
-          <img
-            src="images/logo-small.png"
-            alt="Unwind Logo"
-            width="250"
-            height="auto"
-          />
+          <p>&lt uw &gt</p>
         </a>
         <button
           class="navbar-toggler ml-auto custom-toggler"
@@ -75,49 +70,81 @@
           </ul> -->
 
           <!-- <i class="fa-solid fa-user"></i> -->
+          <a href="contact.html">Contact</a>
           <a
-            class="btn btn-primary rounded-pill bg-white border-0 px-3 custom-class"
+            class="btn btn-outline-light px-3"
             id="login-btn"
             href="login.html"
-            role="button"
+            type="button"
           >
             <span id="user-icon">
-              <!-- <i class="bi bi-person-circle"></i> -->
+              <!-- <i class="bi bi-person-fill"></i> -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-person-circle"
+                class="bi bi-person-fill"
                 viewBox="0 0 16 16"
               >
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                 <path
-                  fill-rule="evenodd"
-                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                  d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
                 />
               </svg>
             </span>
-            Log In | Sign Up
+            Register/Login
           </a>
         </div>
       </nav>
       <header></header>
       <div class="text-on-hero">
-        <h2 class="textonbabyimg">
-          Experience the calming sounds of nature --
-        </h2>
-        <h2 class="textonbabyimg">anytime, anywhere</h2>
+        <h2>Experience the calming sounds of nature &#8212;</h2>
+        <h2>anytime, anywhere</h2>
         <a
-          class="btn btn-primary btn-light rounded-pill border-0 px-3 custom-class"
+          class="btn btn-primary btn-light rounded-pill border-0 px-5 py-2 mt-5"
           href="#"
           role="button"
+          id="hero-cta-btn"
         >
           View Catalog
         </a>
       </div>
       <main>
-        <div></div>
+        <section id="main-container">
+          <div class="container" id="sound-titles">
+            <div class="row py-5">
+              <div class="col-sm">Catalog</div>
+              <div class="col-sm">Playlist</div>
+              <div class="col-sm">Favorites</div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <img src="/assets/images/weather-2.jpg" alt="weather img" />
+                <p>Weather</p>
+              </div>
+              <div class="col">
+                <img src="/assets/images/water.jpg" alt="weather img" />
+                <p>Water</p>
+              </div>
+              <div class="col">
+                <img src="/assets/images/forest.jpg" alt="weather img" />
+                <p>Forest</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <img src="/assets/images/fire.jpg" alt="weather img" />
+                <p>Fire</p>
+              </div>
+              <div class="col">
+                <img src="/assets/images/ambient.jpg" alt="weather img" />
+                <p>Ambient Sounds</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
 
