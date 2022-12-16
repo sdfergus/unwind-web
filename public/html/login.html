@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+    <!-- Google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesome icons -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <title>Register/Login</title>
+  </head>
+  <body id="login">
+    <div id="bg-opacity">
+      <div class="container">
+        <a href="index.html" class="close-btn"> X </a>
+        <!-- Pills navs -->
+        <ul
+          class="nav nav-pills nav-justified mb-4"
+          id="login-nav"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link active"
+              id="tab-login"
+              data-toggle="pill"
+              href="#pills-login"
+              role="tab"
+              aria-controls="pills-login"
+              aria-selected="true"
+              >Login</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link"
+              id="tab-register"
+              data-toggle="pill"
+              href="#pills-register"
+              role="tab"
+              aria-controls="pills-register"
+              aria-selected="false"
+              >Register</a
+            >
+          </li>
+        </ul>
+        <!-- Pills navs -->
+
+        <!-- Pills content -->
+        <div class="tab-content">
+          <div
+            class="tab-pane fade show active"
+            id="pills-login"
+            role="tabpanel"
+            aria-labelledby="tab-login"
+          >
+            <form>
+              <div class="text-center mb-3">
+                <p class="mb-4">Sign in with:</p>
+
+                <button type="button" class="btn btn-outline-light py-2 m-2">
+                  <i class="fab fa-twitter mr-4"></i>
+                  Twitter
+                </button>
+
+                <button type="button" class="btn btn-outline-light py-2 m-2">
+                  <i class="fab fa-google mr-4"></i>
+                  Google
+                </button>
+                <button type="button" class="btn btn-outline-light py-2 m-2">
+                  <i class="fab fa-facebook-f mr-4"></i>
+                  Facebook
+                </button>
+              </div>
+
+              <p class="text-center">OR</p>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input
+                  type="email"
+                  id="loginName"
+                  class="form-control"
+                  placeholder="Email*"
+                />
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input
+                  type="password"
+                  id="loginPassword"
+                  class="form-control"
+                  placeholder="Password*"
+                />
+              </div>
+
+              <!-- 2 column grid layout -->
+              <div class="row mb-4">
+                <div class="col-md-6 d-flex justify-content-center">
+                  <!-- Checkbox -->
+                  <div class="form-check mb-3 mb-md-0">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="loginCheck"
+                    />
+                    <label class="form-check-label" for="loginCheck">
+                      Remember me
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-flex justify-content-center">
+                  <!-- Simple link -->
+                  <a href="#!">Forgot password?</a>
+                </div>
+              </div>
+
+              <!-- Submit button -->
+              <button
+                type="submit"
+                class="btn btn-primary btn-block mb-4 py-2 cta-btn"
+              >
+                Log in
+              </button>
+
+              <!-- Register buttons -->
+              <div class="text-center">
+                <p>
+                  Not a member?
+                  <a id="register-link" href="#pills-register">Register</a>
+                </p>
+              </div>
+            </form>
+          </div>
+          <div
+            class="tab-pane fade active"
+            id="pills-register"
+            role="tabpanel"
+            aria-labelledby="tab-register"
+          >
+            <form>
+              <div class="text-center mb-3">
+                <p class="mb-4">Sign up with:</p>
+
+                <button type="button" class="btn btn-outline-light py-2 m-2">
+                  <i class="fab fa-twitter mr-4"></i>
+                  Twitter
+                </button>
+
+                <button type="button" class="btn btn-outline-light py-2 m-2">
+                  <i class="fab fa-google mr-4"></i>
+                  Google
+                </button>
+                <button type="button" class="btn btn-outline-light py-2 m-2">
+                  <i class="fab fa-facebook-f mr-4"></i>
+                  Facebook
+                </button>
+              </div>
+
+              <p class="text-center">OR</p>
+
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row">
+                <div class="col">
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="register-fname"
+                      class="form-control"
+                      placeholder="First Name*"
+                    />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="register-lname"
+                      class="form-control"
+                      placeholder="Last Name*"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input
+                  type="email"
+                  id="register-email"
+                  class="form-control"
+                  placeholder="Email*"
+                />
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input
+                  type="password"
+                  id="register-pw"
+                  class="form-control"
+                  placeholder="Password*"
+                />
+              </div>
+
+              <!-- Repeat Password input -->
+              <div class="form-outline mb-4">
+                <input
+                  type="password"
+                  id="register-repeat-pw"
+                  class="form-control"
+                  placeholder="Repeat password*"
+                />
+              </div>
+
+              <div class="form-check d-flex justify-content-start mb-4 pb-3">
+                <input
+                  class="form-check-input me-3"
+                  type="checkbox"
+                  value=""
+                  id="form2Example3c"
+                />
+                <label class="form-check-label text-white" for="form2Example3">
+                  I do accept the
+                  <a href="#!" class="text-white"
+                    ><u>Terms and Conditions</u></a
+                  >
+                  of Unwind Web.
+                </label>
+              </div>
+
+              <!-- Submit button -->
+              <button
+                type="submit"
+                class="btn btn-primary btn-block my-5 cta-btn"
+                id="register-btn"
+              >
+                Get Started
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- Pills content -->
+      </div>
+    </div>
+    <!-- Footer -->
+    <!-- <footer>
+      Made with &#9774; and &#x2764; by Shandira <br />
+      &copy; Copyright 2022
+    </footer> -->
+
+    <!-- External JS  -->
+    <script src="../js/login.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
