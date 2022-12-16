@@ -11,4 +11,8 @@ router.get( '/login', ( req, res ) => {
   res.render( 'login', { title: 'Login' } );
 } );
 
+router.get( '/contact', ( req, res ) => {
+  res.render( 'contact', { title: 'Contact Us' } );
+} );
+
 module.exports = router;
