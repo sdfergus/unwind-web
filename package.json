@@ -33,7 +33,6 @@
     "pug": "^3.0.2"
   },
   "devDependencies": {
-    "lite-server": "^2.2.0",
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.20",
     "onchange": "^7.1.0",
