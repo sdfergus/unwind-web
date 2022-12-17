@@ -24,7 +24,8 @@ header {
   margin-bottom: 250px;
 }
 
-#home {
+#home,
+#catalog {
   /* background: no-repeat black url(/images/unwind-hero.png); */
   background: no-repeat black url(../images/unwind-hero.png);
   background-size: 100% 1000px;
@@ -105,7 +106,11 @@ nav {
   color: #1c588c;
 }
 
-#navbarContent #login-btn #user-icon {
+/* #navbarContent #login-btn #user-icon {
+  margin-right: 5px;
+} */
+
+.user-icon {
   margin-right: 5px;
 }
 
@@ -268,3 +273,5 @@ footer {
   padding: 25px 35px;
   text-decoration: none !important;
 }
+
+/* -------------------------------- Catalog Page -------------------------------- */
