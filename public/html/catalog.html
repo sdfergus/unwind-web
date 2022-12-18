@@ -40,47 +40,8 @@
     />
 
     <title>Unwind Web</title>
-    <style>
-      .tab-content {
-        color: white;
-      }
-
-      #catalog-section ul li button {
-        margin: auto;
-        border: none;
-        background-color: transparent;
-        color: white;
-      }
-
-      #catalog-section ul li button.active {
-        filter: drop-shadow(0px 1px 5px #fff);
-        background-color: #1c588c;
-        border: none;
-      }
-
-      .list-group-sounds {
-        border: 1px solid #fff;
-        padding: 0 20px;
-      }
-
-      .list-group-sounds .list-group-item {
-        background-color: black;
-        color: white;
-        border-bottom-color: #fff;
-      }
-
-      .list-group-sounds .list-group-item.active {
-        background-color: #1c588c;
-        filter: drop-shadow(0px 1px 5px #fff);
-        border-color: none;
-      }
-
-      .list-group-item img {
-        width: 60px;
-      }
-    </style>
   </head>
-  <body id="catalog">
+  <body id="weather">
     <div id="container">
       <nav class="navbar navbar-expand-xl navbar-dark sticky-top" id="nav-bar">
         <a class="navbar-brand pl-4 pt-0" href="index.html">
@@ -130,11 +91,11 @@
         </a>
       </div>
       <main>
-        <div class="container">
+        <div class="container" id="weather-vue">
           <div class="row">
             <div class="col align-self-start text-left py-4">
               <i class="bi bi-arrow-left"></i>
-              <a class="text-white" href="index.html">Catalog</a>
+              <a class="text-white" href="index.html#main-container">Catalog</a>
             </div>
             <div class="col align-self-center">
               <h1 class="text-white py-5">Weather</h1>
@@ -146,7 +107,7 @@
           <!-- <a class="text-white" href="index.html">Catalog</a> -->
           <!-- <h1 class="text-white py-5">Weather</h1> -->
         </div>
-        <section id="catalog-section">
+        <section id="weather-section">
           <div class="container">
             <ul
               class="nav nav-pills nav-justified mb-3"
@@ -163,6 +124,7 @@
                   role="tab"
                   aria-controls="pills-home"
                   aria-selected="true"
+                  @click="/*call playAll method*/"
                 >
                   <i class="bi bi-play-circle user-icon"></i>
                   Play all
@@ -207,7 +169,6 @@
                 role="tabpanel"
                 aria-labelledby="pills-home-tab2"
               >
-                TODO: Display List + Play all media
                 <!-- List group -->
                 <div
                   class="list-group list-group-flush list-group-sounds"
@@ -229,7 +190,7 @@
                 role="tabpanel"
                 aria-labelledby="pills-profile-tab2"
               >
-                TODO: Shuffle all media - CURRENTLY NOT DISPLAYING!
+                <!-- TODO: Shuffle all media - OUT OF SCOPE! -->
                 <!-- List group -->
                 <div
                   class="list-group list-group-flush list-group-sounds"
@@ -237,11 +198,13 @@
                   role="tablist"
                 >
                   <div id="vue">
-                    <playlist-selection
+                    <!-- <playlist-selection
                       v-for="soundtract in soundtracks"
                       v-bind:soundtrack="soundtract"
                     >
-                    </playlist-selection>
+                    </playlist-selection> -->
+                    Currently out of scope. Sorry! <br />
+                    Stay tuned :)
                   </div>
                 </div>
               </div>
@@ -251,7 +214,7 @@
                 role="tabpanel"
                 aria-labelledby="pills-contact-tab2"
               >
-                TODO: Display filtered favorites - CURRENTLY NOT DISPLAYING!
+                <!-- TODO: Display filtered favorites - OUT OF SCOPE! -->
                 <!-- List group -->
                 <div
                   class="list-group list-group-flush list-group-sounds"
@@ -259,11 +222,13 @@
                   role="tablist"
                 >
                   <div id="vue">
-                    <playlist-selection
+                    <!-- <playlist-selection
                       v-for="soundtract in soundtracks"
                       v-bind:soundtrack="soundtract"
                     >
-                    </playlist-selection>
+                    </playlist-selection> -->
+                    Currently out of scope. Sorry! <br />
+                    Stay tuned :)
                   </div>
                 </div>
               </div>

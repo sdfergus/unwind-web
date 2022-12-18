@@ -38,24 +38,29 @@ block content
                 span.disabled-txt
                   i.bi.bi-heart.mr-2
                   | Favorites
-          .container
+          #catalog-list.container
             .row
               .col
-                img(src='images/weather-2.jpg' alt='weather img')
-                p Weather
+                a(href='/weather#catalog-vue')
+                  img(src='/images/weather-2.jpg' alt='weather img')
+                  p Weather
               .col
-                img(src='images/water.jpg' alt='weather img')
-                p Water
+                a.disabled-txt(href='#')
+                  img(src='/images/water.jpg' alt='water img')
+                  p Water
               .col
-                img(src='images/forest.jpg' alt='weather img')
-                p Forest
+                a.disabled-txt(href='#')
+                  img(src='/images/forest.jpg' alt='forest img')
+                  p Forest
             .row
               .col
-                img(src='images/fire.jpg' alt='weather img')
-                p Fire
+                a.disabled-txt(href='#')
+                  img(src='/images/fire.jpg' alt='fire img')
+                  p Fire
               .col
-                img(src='images/ambient.jpg' alt='weather img')
-                p Ambient Sounds
+                a.disabled-txt(href='#')
+                  img(src='/images/ambient.jpg' alt='ambient sounds img')
+                  p Ambient Sounds
   block foot
     footer
       | Made with &#x262E; and &#x2764; by Shandira

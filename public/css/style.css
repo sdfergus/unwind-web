@@ -25,7 +25,7 @@ header {
 }
 
 #home,
-#catalog {
+#weather {
   /* background: no-repeat black url(/images/unwind-hero.png); */
   background: no-repeat black url(../images/unwind-hero.png);
   background-size: 100% 1000px;
@@ -161,15 +161,20 @@ main {
   height: 250px;
   filter: drop-shadow(0px 3px 7px white);
   margin-bottom: 20px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .row .col:hover {
   filter: drop-shadow(0px 3px 7px #1c588c);
 }
 
+.row .col a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .row .col p {
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .active-txt {
@@ -274,4 +279,41 @@ footer {
   text-decoration: none !important;
 }
 
-/* -------------------------------- Catalog Page -------------------------------- */
+/* -------------------------------- Catalog: Weather Page -------------------------------- */
+.tab-content {
+  color: white;
+}
+
+#weather-section ul li button {
+  margin: auto;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+#weather-section ul li button.active {
+  filter: drop-shadow(0px 1px 5px #fff);
+  background-color: #1c588c;
+  border: none;
+}
+
+.list-group-sounds {
+  border: 1px solid #fff;
+  padding: 0 20px;
+}
+
+.list-group-sounds .list-group-item {
+  background-color: black;
+  color: white;
+  border-bottom-color: #fff;
+}
+
+.list-group-sounds .list-group-item.active {
+  /* background-color: #1c588c;
+  filter: drop-shadow(0px 1px 5px #fff);
+  border-color: none; */
+}
+
+.list-group-item img {
+  width: 60px;
+}
