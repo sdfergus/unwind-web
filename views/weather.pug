@@ -1,0 +1,92 @@
+extends layout
+
+block content
+  body#weather
+    #container
+      nav#nav-bar.navbar.navbar-expand-xl.navbar-dark.sticky-top
+        a.navbar-brand.pl-4.pt-0(href='/')
+          p  &lt; uw &gt;
+        button.navbar-toggler.ml-auto.custom-toggler(type='button' data-toggle='collapse' data-target='#navbarContent' aria-controls='navbarContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarContent.collapse.navbar-collapse
+          a(href='/contact') Contact
+          a#login-btn.btn.btn-outline-light.px-3(href='/login' type='button')
+            span.user-icon
+              // <i class="bi bi-person-fill"></i>
+              svg.bi.bi-person-fill(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewbox='0 0 16 16')
+                path(d='M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z')
+            |               Register/Login
+      header
+      .text-on-hero
+        h2 Experience the calming sounds of nature &mdash;
+        h2 anytime, anywhere
+        a#hero-cta-btn.btn.btn-primary.btn-light.rounded-pill.border-0.px-5.py-2.mt-5(href='#' role='button')
+          | View Catalog
+      main
+        #weather-vue.container
+          .row
+            .col.align-self-start.text-left.py-4
+              i.bi.bi-arrow-left
+              a.text-white(href='/#main-container') Catalog
+            .col.align-self-center
+              h1.text-white.py-5 Weather
+            .col.align-self-center
+              h1.text-white.py-5
+          // <a class="text-white" href="index.html">Catalog</a>
+          // <h1 class="text-white py-5">Weather</h1>
+        section#weather-section
+          .container
+            ul#pills-tab2.nav.nav-pills.nav-justified.mb-3(role='tablist')
+              li.nav-item(role='presentation')
+                button#pills-home-tab2.nav-link(data-toggle='pill' data-target='#pills-home2' type='button' role='tab' aria-controls='pills-home' aria-selected='true' @click='/*call playAll method*/')
+                  i.bi.bi-play-circle.user-icon
+                  |                   Play all
+              li.nav-item(role='presentation')
+                button#pills-profile-tab2.nav-link(data-toggle='pill' data-target='#pills-profile2' type='button' role='tab' aria-controls='pills-profile' aria-selected='false')
+                  i.bi.bi-shuffle.user-icon
+                  |                   Shuffle All
+              li.nav-item(role='presentation')
+                button#pills-contact-tab2.nav-link(data-toggle='pill' data-target='#pills-contact2' type='button' role='tab' aria-controls='pills-contact' aria-selected='false')
+                  // <i class="bi bi-heart"></i>
+                  i.bi.bi-heart-fill.user-icon
+                  |                   Favorites
+            #pills-tabContent2.tab-content
+              #pills-home2.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='pills-home-tab2')
+                // List group
+                #myList.list-group.list-group-flush.list-group-sounds(role='tablist')
+                  #vue
+                    playlist-selection(v-for='soundtract in soundtracks' v-bind:soundtrack='soundtract')
+              #pills-profile2.tab-pane.fade(role='tabpanel' aria-labelledby='pills-profile-tab2')
+                // TODO: Shuffle all media - OUT OF SCOPE!
+                // List group
+                #myList.list-group.list-group-flush.list-group-sounds(role='tablist')
+                  #vue
+                    //
+                      <playlist-selection
+                      v-for="soundtract in soundtracks"
+                      v-bind:soundtrack="soundtract"
+                      >
+                      </playlist-selection>
+                    | Currently out of scope. Sorry!
+                    br
+                    |                     Stay tuned :)
+              #pills-contact2.tab-pane.fade(role='tabpanel' aria-labelledby='pills-contact-tab2')
+                // TODO: Display filtered favorites - OUT OF SCOPE!
+                // List group
+                #myList.list-group.list-group-flush.list-group-sounds(role='tablist')
+                  #vue
+                    //
+                      <playlist-selection
+                      v-for="soundtract in soundtracks"
+                      v-bind:soundtrack="soundtract"
+                      >
+                      </playlist-selection>
+                    | Currently out of scope. Sorry!
+                    br
+                    |                     Stay tuned :)
+
+  block foot
+    footer
+      | Made with &#x262E; and &#x2764; by Shandira
+      br
+      |         &copy; Copyright 2022
