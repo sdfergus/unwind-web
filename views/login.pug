@@ -2,6 +2,7 @@ extends layout
 
 block content
   body#login
+  -data = data || {}
     #bg-opacity
       .container
         a.close-btn(href='/')  X
@@ -15,8 +16,12 @@ block content
         // Pills content
         .tab-content
           #pills-login.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='tab-login')
-            form
-              .text-center.mb-3
+            if errors
+              ul.my-errors
+              for error in errors
+                  li= error.msg
+            form(action='/login' method='POST')
+              .text-center.mb-3.disabled-txt
                 p.mb-4 Sign in with:
                 button.btn.btn-outline-light.py-2.m-2(type='button')
                   i.fab.fa-twitter.mr-4
@@ -28,31 +33,55 @@ block content
                   i.fab.fa-facebook-f.mr-4
                   |                   Facebook
               p.text-center OR
-              // Email input
+              // username input
               .form-outline.mb-4
-                input#loginName.form-control(type='email' placeholder='Email*')
+                input#loginName.form-control(
+                  type='text'
+                  placeholder='Username*'
+                  name='username'
+                  required=''
+                  class="form-control"
+                  value=data.username
+                )
               // Password input
               .form-outline.mb-4
-                input#loginPassword.form-control(type='password' placeholder='Password*')
+                input#loginPassword.form-control(
+                  type='password'
+                  placeholder='Password*'
+                  name='password'
+                  required=''
+                  class="form-control"
+                  value=data.password
+                )
               // 2 column grid layout
               .row.mb-4
                 .col-md-6.d-flex.justify-content-center
                   // Checkbox
                   .form-check.mb-3.mb-md-0
-                    input#loginCheck.form-check-input(type='checkbox' value='')
+                    input#loginCheck.form-check-input(
+                      type='checkbox'
+                      value=''
+                    )
                     label.form-check-label(for='loginCheck')
                       | Remember me
                 .col-md-6.d-flex.justify-content-center
                   // Simple link
-                  a(href='#!') Forgot password?
+                  a.disabled-txt(href='#!') Forgot password?
               // Submit button
-              button.btn.btn-primary.btn-block.mb-4.py-2.cta-btn(type='submit')
+              button#login-form-btn.btn.btn-primary.btn-block.mb-4.py-2.cta-btn(type='submit' name='submit' value='submit' aria-required='true')
                 | Log in
               // Register buttons
               .text-center
                 p
-                  | Not a member?
-                  a#register-link(href='#pills-register') Register
+                  | Not a member? Click register above
+                  //
+                    <a
+                    id="register-link"
+                    class="disabled-txt"
+                    href="#pills-register"
+                    >Register above</a
+                    >
+              label#error-message
           #pills-register.tab-pane.fade.active(role='tabpanel' aria-labelledby='tab-register')
             form
               .text-center.mb-3
@@ -71,19 +100,19 @@ block content
               .row
                 .col
                   .form-outline
-                    input#register-fname.form-control(type='text' placeholder='First Name*')
+                    input#register-fname.form-control(type='text' name="fname" placeholder='First Name*')
                 .col
                   .form-outline
-                    input#register-lname.form-control(type='text' placeholder='Last Name*')
+                    input#register-lname.form-control(type='text' name="lname" placeholder='Last Name*')
               // Email input
               .form-outline.mb-4
-                input#register-email.form-control(type='email' placeholder='Email*')
+                input#register-email.form-control(type='email' name="email" placeholder='Email*')
               // Password input
               .form-outline.mb-4
-                input#register-pw.form-control(type='password' placeholder='Password*')
+                input#register-pw.form-control(type='password' name="password" placeholder='Password*')
               // Repeat Password input
               .form-outline.mb-4
-                input#register-repeat-pw.form-control(type='password' placeholder='Repeat password*')
+                input#register-repeat-pw.form-control(type='password' name="password2" placeholder='Repeat password*')
               .form-check.d-flex.justify-content-start.mb-4.pb-3
                 input#form2Example3c.form-check-input.me-3(type='checkbox' value='')
                 label.form-check-label.text-white(for='form2Example3')
@@ -92,7 +121,7 @@ block content
                     u Terms and Conditions
                   |                   of Unwind Web.
               // Submit button
-              button#register-btn.btn.btn-primary.btn-block.my-5.cta-btn(type='submit')
+              button#register-btn.btn.btn-primary.btn-block.my-5.cta-btn(type='submit' name="submit")
                 | Get Started
         // Pills content
   //- block foot
@@ -100,3 +129,12 @@ block content
   //-     | Made with &#x262E; and &#x2764; by Shandira
   //-     br
   //-     |         &copy; Copyright 2022
+
+  script.
+    const urlParams = new URLSearchParams(window.location.search);
+    const info = urlParams.get('info');
+    if (info) {
+      const errorMessage = document.getElementById('error-message');
+      errorMessage.innerText = JSON.stringify(info);
+      errorMessage.style.display = 'block';
+    }

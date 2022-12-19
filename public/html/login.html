@@ -81,8 +81,8 @@
             role="tabpanel"
             aria-labelledby="tab-login"
           >
-            <form>
-              <div class="text-center mb-3">
+            <form action="/login" method="post">
+              <div class="text-center mb-3 disabled-txt">
                 <p class="mb-4">Sign in with:</p>
 
                 <button type="button" class="btn btn-outline-light py-2 m-2">
@@ -107,8 +107,10 @@
                 <input
                   type="email"
                   id="loginName"
+                  name="email"
                   class="form-control"
                   placeholder="Email*"
+                  required
                 />
               </div>
 
@@ -117,8 +119,10 @@
                 <input
                   type="password"
                   id="loginPassword"
+                  name="password"
                   class="form-control"
                   placeholder="Password*"
+                  required
                 />
               </div>
 
@@ -141,13 +145,16 @@
 
                 <div class="col-md-6 d-flex justify-content-center">
                   <!-- Simple link -->
-                  <a href="#!">Forgot password?</a>
+                  <a href="#!" class="disabled-txt">Forgot password?</a>
                 </div>
               </div>
 
               <!-- Submit button -->
               <button
                 type="submit"
+                value="submit"
+                aria-required="true"
+                id="login-form-btn"
                 class="btn btn-primary btn-block mb-4 py-2 cta-btn"
               >
                 Log in
@@ -156,10 +163,16 @@
               <!-- Register buttons -->
               <div class="text-center">
                 <p>
-                  Not a member?
-                  <a id="register-link" href="#pills-register">Register</a>
+                  Not a member? Click register above
+                  <!-- <a
+                    id="register-link"
+                    class="disabled-txt"
+                    href="#pills-register"
+                    >Register above</a
+                  > -->
                 </p>
               </div>
+              <label id="error-message"></label>
             </form>
           </div>
           <div
@@ -196,6 +209,7 @@
                     <input
                       type="text"
                       id="register-fname"
+                      name="fname"
                       class="form-control"
                       placeholder="First Name*"
                     />
@@ -206,6 +220,7 @@
                     <input
                       type="text"
                       id="register-lname"
+                      name="lname"
                       class="form-control"
                       placeholder="Last Name*"
                     />
@@ -218,6 +233,7 @@
                 <input
                   type="email"
                   id="register-email"
+                  name="email"
                   class="form-control"
                   placeholder="Email*"
                 />
@@ -228,6 +244,7 @@
                 <input
                   type="password"
                   id="register-pw"
+                  name="password"
                   class="form-control"
                   placeholder="Password*"
                 />
@@ -238,6 +255,7 @@
                 <input
                   type="password"
                   id="register-repeat-pw"
+                  name="password2"
                   class="form-control"
                   placeholder="Repeat password*"
                 />
@@ -264,6 +282,7 @@
                 type="submit"
                 class="btn btn-primary btn-block my-5 cta-btn"
                 id="register-btn"
+                name="submit"
               >
                 Get Started
               </button>
@@ -278,6 +297,17 @@
       Made with &#9774; and &#x2764; by Shandira <br />
       &copy; Copyright 2022
     </footer> -->
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const info = urlParams.get('info');
+
+      if (info) {
+        const errorMessage = document.getElementById('error-message');
+        errorMessage.innerText = info;
+        errorMessage.style.display = 'block';
+      }
+    </script>
 
     <!-- External JS  -->
     <script src="../js/login.js"></script>

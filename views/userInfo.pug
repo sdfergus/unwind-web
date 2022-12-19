@@ -1,0 +1,17 @@
+//- extends layout
+link(rel="stylesheet", href="css/bootstrap.min.css")
+link(rel="stylesheet", href="css/form.css")
+
+block content
+
+    if users.length
+        table.listing-table.table-light
+            tr
+                th Username
+                th Password
+            each user in users
+                tr
+                    td= user.username
+                    td= user.password
+    else
+        p Currently no users listed.

@@ -25,7 +25,8 @@ header {
 }
 
 #home,
-#weather {
+#weather,
+#user {
   /* background: no-repeat black url(/images/unwind-hero.png); */
   background: no-repeat black url(../images/unwind-hero.png);
   background-size: 100% 1000px;
@@ -95,14 +96,16 @@ nav {
   /* height: 3em;  */
 }
 
-#navbarContent #login-btn {
+#navbarContent #login-btn,
+#logout-btn {
   color: #fff;
   font-weight: 700;
   margin-bottom: 8px;
   font-size: 12px;
 }
 
-#navbarContent #login-btn:hover {
+#navbarContent #login-btn:hover,
+#logout-btn:hover {
   color: #1c588c;
 }
 
@@ -269,6 +272,14 @@ footer {
   font-weight: bold;
 }
 
+#error-message {
+  color: #e91e63;
+  display: block;
+  margin: 10px;
+  font-size: large;
+  max-width: fit-content;
+}
+
 /* -------------------------------- Contact Page -------------------------------- */
 
 .close-btn {
@@ -316,4 +327,14 @@ footer {
 
 .list-group-item img {
   width: 60px;
+}
+
+/* -------------------------------- User Page -------------------------------- */
+#welcome-message {
+  color: #fff;
+  padding: 0 10px;
+}
+
+#user #navbarContent p {
+  margin-bottom: 0;
 }

@@ -1,0 +1,80 @@
+extends layout
+
+block content
+  body#user
+    #container
+      nav#nav-bar.navbar.navbar-expand-xl.navbar-dark.sticky-top
+        a.navbar-brand.pl-4.pt-0(href='/')
+          p  &lt; uw &gt;
+        button.navbar-toggler.ml-auto.custom-toggler(type='button' data-toggle='collapse' data-target='#navbarContent' aria-controls='navbarContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarContent.collapse.navbar-collapse
+          a(href='/contact') Contact
+          p#welcome-message
+            span.user-icon
+              svg.bi.bi-person-fill(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewbox='0 0 16 16')
+                path(d='M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z')
+            |               Welcome
+          a#login-btn.btn.btn-outline-light.px-3(href='/login' type='button')
+            |               Log Out
+      header
+      .text-on-hero
+        h2 Experience the calming sounds of nature &mdash;
+        h2 anytime, anywhere
+        a#hero-cta-btn.btn.btn-primary.btn-light.rounded-pill.border-0.px-5.py-2.mt-5(href='main-container' role='button')
+          | View Catalog
+      main
+        section#main-container
+          #sound-titles.container
+            .row.py-5
+              .col-sm
+                span.active-txt.rounded
+                  i.bi.bi-book.mr-2
+                  |                   Catalog
+              .col-sm
+                span.disabled-txt
+                  i.bi.bi-music-note-list.mr-2
+                  |  Playlist
+              .col-sm
+                span.disabled-txt
+                  i.bi.bi-heart.mr-2
+                  | Favorites
+          #catalog-list.container
+            .row
+              .col
+                a(href='/catalog#catalog-vue')
+                  img(src='/images/weather-2.jpg' alt='weather img')
+                  p Weather
+              .col
+                a.disabled-txt(href='#')
+                  img(src='/images/water.jpg' alt='water img')
+                  p Water
+              .col
+                a.disabled-txt(href='#')
+                  img(src='/images/forest.jpg' alt='forest img')
+                  p Forest
+            .row
+              .col
+                a.disabled-txt(href='#')
+                  img(src='/images/fire.jpg' alt='fire img')
+                  p Fire
+              .col
+                a.disabled-txt(href='#')
+                  img(src='/images/ambient.jpg' alt='ambient sounds img')
+                  p Ambient Sounds
+  block foot
+    footer
+      | Made with &#x262E; and &#x2764; by Shandira
+      br
+      |         &copy; Copyright 2022
+
+    script.
+      const req = new XMLHttpRequest();
+      req.onreadystatechange = function () {
+        if (req.readyState === 4 && req.status === 200) {
+          const user = JSON.parse(req.response).user;
+          document.getElementById("welcome-message").innerText = `Welcome ${user.username}!`;
+        }
+      };
+      req.open("GET", "http://localhost:3000/user", true);
+      req.send();
