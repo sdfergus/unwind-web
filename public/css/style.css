@@ -1,207 +1,146 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap");
+/* Variables */
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', sans-serif;
-}
+  font-family: "Raleway", sans-serif; }
 
 body {
   text-align: center;
-  min-width: 600px;
-}
-
-/* #pagebox {
-  text-align: left;
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-} */
+  min-width: 600px; }
 
 header {
   width: 100%;
   min-height: 275px;
-  margin-bottom: 250px;
-}
+  margin-bottom: 250px; }
 
-#home,
-#weather,
-#user {
-  /* background: no-repeat black url(/images/unwind-hero.png); */
+#home {
   background: no-repeat black url(../images/unwind-hero.png);
-  background-size: 100% 1000px;
-  /* background-size: 100% auto; */
-}
+  background-size: 100% 1000px; }
+
+#weather {
+  background: no-repeat black url(../images/unwind-hero.png);
+  background-size: 100% 1000px; }
+
+#user {
+  background: no-repeat black url(../images/unwind-hero.png);
+  background-size: 100% 1000px; }
+  #user #navbarContent p {
+    margin-bottom: 0; }
 
 .text-on-hero {
   font-family: 'Bodoni Moda', serif;
   font-weight: bold;
   font-size: 35px;
   text-align: center;
-  color: white;
-  padding: 50px;
-}
+  color: #fff;
+  padding: 50px; }
 
-/* -------------------------------- Navbar -------------------------------- */
 nav {
-  position: relative;
-}
+  position: relative; }
 
 #nav-bar {
-  /* background-color: rgba(26, 46, 56, 0.9); */
-  /* padding-bottom: 0;
-  padding-top: 20px;  */
   font-size: 14px;
-
   text-align: left;
-  /* width: 1400px; */
   margin-left: auto;
-  margin-right: auto;
-}
+  margin-right: auto; }
 
 #navbarContent {
-  justify-content: right;
-}
+  justify-content: right; }
+  #navbarContent a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #fff; }
+  #navbarContent #login-btn {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 12px; }
+    #navbarContent #login-btn:hover {
+      color: #1c588c; }
 
-#navbarContent a {
-  margin: 0 20px;
-  text-decoration: none;
-  color: #fff;
-}
-
-/* #navbarContent .navbar-nav .nav-item .nav-link {
-  color: white;
-  font-weight: 500;
-  padding: 10px;
-  float: right;
-} */
-
-/*Toggle this when nav is active*/
 .dropdown {
-  position: initial;
-}
+  position: initial; }
 
 .dropdown-menu {
   width: 90%;
   margin: auto;
   top: 65%;
   left: 5%;
-  border: none;
-}
+  border: none; }
 
 .highlight {
-  background-color: white;
-  color: black !important;
-  font-weight: 500 !important;
-  /* height: 3em;  */
-}
+  background-color: #fff;
+  color: #000 !important;
+  font-weight: 500 !important; }
 
-#navbarContent #login-btn,
 #logout-btn {
   color: #fff;
   font-weight: 700;
   margin-bottom: 8px;
-  font-size: 12px;
-}
-
-#navbarContent #login-btn:hover,
-#logout-btn:hover {
-  color: #1c588c;
-}
-
-/* #navbarContent #login-btn #user-icon {
-  margin-right: 5px;
-} */
+  font-size: 12px; }
+  #logout-btn:hover {
+    color: #1c588c; }
 
 .user-icon {
-  margin-right: 5px;
-}
+  margin-right: 5px; }
 
-/* Change the color in the stroke property of the hamburger menu */
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255,255,255)' stroke-width='3' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 #hero-cta-btn {
   font-weight: bold;
   font-size: 18px;
   background-color: #1c588c;
-  color: #fff;
-}
+  color: #fff; }
+  #hero-cta-btn:hover {
+    background-color: #fff;
+    color: #1c588c; }
 
-#hero-cta-btn:hover {
-  background-color: white;
-  color: #1c588c;
-}
-
-/* -------------------------------- Home -------------------------------- */
 main {
-  background-color: #000;
-}
+  background-color: #000; }
 
 #main-container {
   text-align: left;
-  /* width: 1200px; */
   margin-left: auto;
-  margin-right: auto;
-}
+  margin-right: auto; }
 
 #sound-titles {
   font-size: 50px;
-}
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  padding: 20px 0; }
 
-#sound-titles,
 .row {
   color: #fff;
   font-size: 20px;
   text-align: center;
-  padding: 20px 0;
-}
-
-.row .col img {
-  width: 350px;
-  height: 250px;
-  filter: drop-shadow(0px 3px 7px white);
-  margin-bottom: 20px;
-  /* cursor: pointer; */
-}
-
-.row .col:hover {
-  filter: drop-shadow(0px 3px 7px #1c588c);
-}
-
-.row .col a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.row .col p {
-  /* cursor: pointer; */
-}
+  padding: 20px 0; }
+  .row .col img {
+    width: 350px;
+    height: 250px;
+    filter: drop-shadow(0px 3px 7px #fff);
+    margin-bottom: 20px; }
+  .row .col:hover {
+    filter: drop-shadow(0px 3px 7px #1c588c); }
+  .row .col a {
+    text-decoration: none;
+    color: #fff; }
 
 .active-txt {
   color: #fff;
   cursor: pointer;
   background-color: #1c588c;
   padding: 5px 15px;
-  filter: drop-shadow(0px 1px 5px #fff);
-  /* border-radius: 10%; */
-}
+  filter: drop-shadow(0px 1px 5px #fff); }
 
 .disabled-txt {
   color: rgba(196, 196, 196, 0.5);
-  cursor: not-allowed;
-}
+  cursor: not-allowed; }
 
-/* .row .col p:hover {
-  text-decoration: underline;
-} */
-
-/* -------------------------------- Footer -------------------------------- */
 footer {
-  /* left: 0px; */
-  /* position: absolute; */
   bottom: 0px;
   width: 100%;
   background: #000;
@@ -212,17 +151,33 @@ footer {
   text-align: center;
   height: 80px;
   border-top: 1px solid #fff;
-  margin-top: 60px;
-}
+  margin-top: 60px; }
 
-/* -------------------------------- LogIn Page -------------------------------- */
+#login {
+  background: no-repeat #000 url(../images/unwind-hero.png);
+  background-size: cover; }
+  #login .container {
+    background-color: #000;
+    border-radius: 0.5%;
+    padding: 50px 80px;
+    margin: 60px auto;
+    width: 800px;
+    z-index: 5;
+    color: #fff;
+    filter: drop-shadow(0px 3px 7px #fff); }
 
-#login,
 #contact {
-  background: no-repeat black url(../images/unwind-hero.png);
-  background-size: cover;
-  /* background-position: center;  */
-}
+  background: no-repeat #000 url(../images/unwind-hero.png);
+  background-size: cover; }
+  #contact .container {
+    background-color: #000;
+    border-radius: 0.5%;
+    padding: 50px 80px;
+    margin: 60px auto;
+    width: 800px;
+    z-index: 5;
+    color: #fff;
+    filter: drop-shadow(0px 3px 7px #fff); }
 
 #bg-opacity {
   position: fixed;
@@ -232,109 +187,59 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-#login .container,
-#contact .container {
-  background-color: #000;
-  border-radius: 0.5%;
-  padding: 50px 80px;
-  margin: 60px auto;
-  width: 800px;
-  /* height: fit-content; */
-  z-index: 5;
-  color: #fff;
-  filter: drop-shadow(0px 3px 7px white);
-}
-
-#login .container input,
-#contact .container input,
-#contact .container textarea {
-  /* margin: 35px 0; */
-}
+  background: rgba(0, 0, 0, 0.6); }
 
 #login-nav {
-  background-color: rgba(196, 196, 196, 0.5);
-}
-
-#login-nav a {
-  color: rgba(0, 0, 0, 0.5);
-}
-
-#login-nav .active {
-  color: #fff;
-}
+  background-color: rgba(196, 196, 196, 0.5); }
+  #login-nav a {
+    color: rgba(0, 0, 0, 0.5); }
+  #login-nav .active {
+    color: #fff; }
 
 .cta-btn {
   border: none;
   font-size: 24px;
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 #error-message {
   color: #e91e63;
   display: block;
   margin: 10px;
   font-size: large;
-  max-width: fit-content;
-}
-
-/* -------------------------------- Contact Page -------------------------------- */
+  max-width: fit-content; }
 
 .close-btn {
   position: absolute;
   top: 0;
   right: 0;
   padding: 25px 35px;
-  text-decoration: none !important;
-}
+  text-decoration: none !important; }
 
-/* -------------------------------- Catalog: Weather Page -------------------------------- */
 .tab-content {
-  color: white;
-}
+  color: #fff; }
 
 #weather-section ul li button {
   margin: auto;
   border: none;
   background-color: transparent;
-  color: white;
-}
+  color: #fff; }
 
 #weather-section ul li button.active {
   filter: drop-shadow(0px 1px 5px #fff);
   background-color: #1c588c;
-  border: none;
-}
+  border: none; }
 
 .list-group-sounds {
   border: 1px solid #fff;
-  padding: 0 20px;
-}
-
-.list-group-sounds .list-group-item {
-  background-color: black;
-  color: white;
-  border-bottom-color: #fff;
-}
-
-.list-group-sounds .list-group-item.active {
-  /* background-color: #1c588c;
-  filter: drop-shadow(0px 1px 5px #fff);
-  border-color: none; */
-}
+  padding: 0 20px; }
+  .list-group-sounds .list-group-item {
+    background-color: #000;
+    color: #fff;
+    border-bottom-color: #fff; }
 
 .list-group-item img {
-  width: 60px;
-}
+  width: 60px; }
 
-/* -------------------------------- User Page -------------------------------- */
 #welcome-message {
   color: #fff;
-  padding: 0 10px;
-}
-
-#user #navbarContent p {
-  margin-bottom: 0;
-}
+  padding: 0 10px; }

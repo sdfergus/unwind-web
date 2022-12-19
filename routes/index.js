@@ -16,7 +16,7 @@ const Users = mongoose.model( 'UsersInfo' );
 const router = express.Router();
 
 router.get( '/',
-  connectEnsureLogin.ensureLoggedIn(),
+  // connectEnsureLogin.ensureLoggedIn(),
   ( req, res ) => {
     res.render( 'index', { title: 'Unwind Web' } );
   } );
